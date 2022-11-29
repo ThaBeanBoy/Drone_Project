@@ -10,9 +10,10 @@ namespace Drone
     {
         static void Main(string[] args)
         {
-            Drone.FindLocation(11);
+            Console.Write("Enter the seconds from launch : ");
+            Drone.FindLocation(Convert.ToInt32(Console.ReadLine()));
 
-            Console.Write("Press Enter To Exit Programme : ");
+            Console.Write("\nPress Enter To Exit Programme : ");
             Console.ReadLine();
         }
     }
