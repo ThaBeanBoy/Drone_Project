@@ -1,0 +1,7 @@
+C:\Users\TG Chipoyera\source\repos\Drone\bin\Debug\Drone.exe.config
+C:\Users\TG Chipoyera\source\repos\Drone\bin\Debug\Drone.exe
+C:\Users\TG Chipoyera\source\repos\Drone\bin\Debug\Drone.pdb
+C:\Users\TG Chipoyera\source\repos\Drone\obj\Debug\Drone.csproj.AssemblyReference.cache
+C:\Users\TG Chipoyera\source\repos\Drone\obj\Debug\Drone.csproj.CoreCompileInputs.cache
+C:\Users\TG Chipoyera\source\repos\Drone\obj\Debug\Drone.exe
+C:\Users\TG Chipoyera\source\repos\Drone\obj\Debug\Drone.pdb
