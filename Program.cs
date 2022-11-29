@@ -21,10 +21,11 @@ namespace Drone
     {
         public static void FindLocation(int Time){
             int n = 1;
-            while (Time > TimeTakenAt_n(n))
+            while (Time >= TimeTakenAt_n(n))
             {
-                n++;
                 Time -= TimeTakenAt_n(n);
+                //Console.WriteLine("Subtracting : " + " n : " + n + " result : "+ TimeTakenAt_n(n));
+                n++;
             }
 
             //Calculating starting coordinates
@@ -47,9 +48,86 @@ namespace Drone
             }
 
             //Calculating final coordinates of drone
+            Coordinates Final = Start;
+            if (!IsEven(n))
+            {
+                // 1 meter forward
+                if(Time > 0)
+                {
+                    Final.y += 1;
+                    Time--;
+                }
 
-            Console.WriteLine("Start x: " + Start.x + " Start y: " + Start.y);
-            Console.WriteLine("Steps left : " + Time);
+                // n meter left
+                if (Time > 0)
+                {
+                    if(Time < n)
+                    {
+                        Final.x += Time;
+                        Time = 0;
+                    }
+                    else
+                    {
+                        Final.x += n;
+                        Time -= n;
+                    }
+                }
+
+                // n meter backwards
+                if (Time > 0)
+                {
+                    if (Time < n)
+                    {
+                        Final.y -= Time;
+                        Time = 0;
+                    }
+                    else
+                    {
+                        Final.y -= n;
+                        Time -= n;
+                    }
+                }
+
+                // n meter left
+                if (Time > 0)
+                {
+                    Final.x += 1;
+                }
+            }
+            else
+            {
+                //n meter forward
+                if (Time > 0)
+                {
+                    if (Time < n)
+                    {
+                        Final.y += Time;
+                        Time = 0;
+                    }
+                    else
+                    {
+                        Final.y += n;
+                        Time -= n;
+                    }
+                }
+
+                //n meter right
+                if (Time > 0)
+                {
+                    if (Time < n)
+                    {
+                        Final.x -= Time;
+                        Time = 0;
+                    }
+                    else
+                    {
+                        Final.x -= n;
+                        Time -= n;
+                    }
+                }
+            }
+
+            Console.WriteLine("x: " + Final.x + " meters left \ny: " + Final.y + " meters foward");
         }
         private static int TimeTakenAt_n(int n)
         {
